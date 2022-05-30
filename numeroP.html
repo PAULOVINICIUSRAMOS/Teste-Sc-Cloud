@@ -1,0 +1,18 @@
+<form id="dados" onsubmit="exibirNumerosPrimos()" >
+    <div class="form-group">
+       <label for="numeroPrimo">Numeros Primos</label>
+       <input type="number" class="form-control" placeholder="Digite um numero" name="numerosP" id="numerosP" ngModel/>
+       <button>Enviar</button>
+    </div>
+    </form>
+<script>  
+    function ehPrimo(i) {
+        for (var divisor = 2; divisor < i; divisor++) if (i % divisor == 0) return false;
+        return true;
+    }
+    function exibirNumerosPrimos(){
+        var numero = document.getElementById('dados').numerosP.value;
+         for (var i = 2; i < numero; i++) if (ehPrimo(i)) document.write(i + '\n');        
+    }
+</script>
+     
